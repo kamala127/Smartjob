@@ -14,8 +14,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Data
-@Getter
-@Setter
 @Entity
 public class Resume {
 

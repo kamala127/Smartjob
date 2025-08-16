@@ -11,7 +11,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
-
+import lombok.Data;
+@Data
 @Entity
 public class Application {
 

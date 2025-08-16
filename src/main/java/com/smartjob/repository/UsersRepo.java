@@ -7,5 +7,7 @@ import com.smartjob.entity.Users;
 
 @Repository
 public interface UsersRepo extends JpaRepository<Users, Long>{
-
+	
+	boolean existsByUsername(String username);
+    boolean existsByEmail(String email);
 }

@@ -17,8 +17,6 @@ import lombok.Setter;
 
 
 @Data
-@Getter
-@Setter
 @Entity
 public class Job {
 
