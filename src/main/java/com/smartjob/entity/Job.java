@@ -16,7 +16,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 
-@Data
 @Entity
 public class Job {
 
@@ -52,6 +51,104 @@ public class Job {
 	    	this.updatedAt = LocalDateTime.now();
 	    	
 	    }
+
+		public Long getId() {
+			return id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getTitle() {
+			return title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getDescription() {
+			return description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getLocation() {
+			return location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
+
+		public Double getSalary() {
+			return salary;
+		}
+
+		public void setSalary(Double salary) {
+			this.salary = salary;
+		}
+
+		public String getJobType() {
+			return jobType;
+		}
+
+		public void setJobType(String jobType) {
+			this.jobType = jobType;
+		}
+
+		public Users getRecruiter() {
+			return recruiter;
+		}
+
+		public void setRecruiter(Users recruiter) {
+			this.recruiter = recruiter;
+		}
+
+		public LocalDateTime getPostedAt() {
+			return postedAt;
+		}
+
+		public void setPostedAt(LocalDateTime postedAt) {
+			this.postedAt = postedAt;
+		}
+
+		public LocalDateTime getUpdatedAt() {
+			return updatedAt;
+		}
+
+		public void setUpdatedAt(LocalDateTime updatedAt) {
+			this.updatedAt = updatedAt;
+		}
+
+		@Override
+		public String toString() {
+			return "Job [id=" + id + ", title=" + title + ", description=" + description + ", location=" + location
+					+ ", salary=" + salary + ", jobType=" + jobType + ", recruiter=" + recruiter + ", postedAt="
+					+ postedAt + ", updatedAt=" + updatedAt + "]";
+		}
+
+		public Job(Long id, String title, String description, String location, Double salary, String jobType,
+				Users recruiter, LocalDateTime postedAt, LocalDateTime updatedAt) {
+			super();
+			this.id = id;
+			this.title = title;
+			this.description = description;
+			this.location = location;
+			this.salary = salary;
+			this.jobType = jobType;
+			this.recruiter = recruiter;
+			this.postedAt = postedAt;
+			this.updatedAt = updatedAt;
+		}
+
+		public Job() {
+			super();
+			// TODO Auto-generated constructor stub
+		}
 
 	
 

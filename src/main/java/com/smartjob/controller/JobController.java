@@ -11,33 +11,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.smartjob.dto.CreateUserDto;
-import com.smartjob.dto.ResponseUserDto;
-import com.smartjob.entity.Users;
-import com.smartjob.repository.UsersRepo;
-import com.smartjob.service.UserService;
+import com.smartjob.dto.CreateJobDto;
+import com.smartjob.entity.Job;
+import com.smartjob.repository.JobRepo;
+import com.smartjob.service.JobService;
 
 @RestController
-@RequestMapping("/admin")
-public class UserController {
-
+@RequestMapping("/recruiter")
+public class JobController {
 	
 	@Autowired
-	private UserService userService;
+	private JobService jobService;
 	
 	@Autowired
-	private CreateUserDto createuserDto;
-	
-	@Autowired
-	private UsersRepo usersRepo;
+	private JobRepo jobRepo;
 	
 	
-	@GetMapping("/getuser/{id}")
-	public ResponseUserDto getuserbyId(@PathVariable("id") Long id) {
-		return userService.viewUser(id);
+	@PostMapping("/create-job")
+	public ResponseEntity<String> createJob(@RequestBody CreateJobDto dto){
+	    return jobService.createJob(dto);
 	}
 	
-	
+	@GetMapping("/getall")
+	public List<Job> findAll(){
+		return jobRepo.findAll();
+			
+	}
 
 	
+
 }

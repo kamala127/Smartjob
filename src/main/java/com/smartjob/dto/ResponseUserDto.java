@@ -2,6 +2,8 @@ package com.smartjob.dto;
 
 import org.springframework.stereotype.Component;
 
+import com.smartjob.entity.Role;
+
 @Component
 public class ResponseUserDto {
 
@@ -11,6 +13,14 @@ public class ResponseUserDto {
 	private String phoneNumber;
 	private String bio;
 	private boolean active;
+	private Role role;
+	
+	public Role getRole() {
+		return role;
+	}
+	public void setRole(Role role) {
+		this.role = role;
+	}
 	public String getUsername() {
 		return username;
 	}
